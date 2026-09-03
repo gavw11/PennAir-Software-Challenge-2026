@@ -1,0 +1,20 @@
+build/
+install/
+log/
+
+.vscode/
+.idea/
+
+# Ignore ROS 2 build and install directories
+build/
+install/
+log/
+
+# Ignore Python cache and testing files
+__pycache__/
+.pytest_cache/
+*.pyc
+
+# Ignore WSL/Windows specific metadata if visible
+.DS_Store
+Thumbs.db

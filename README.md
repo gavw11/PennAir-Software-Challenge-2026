@@ -43,8 +43,16 @@ shape_segmenter/
 
 ## Tasks
 **Part 1**
+
 <img width="1438" height="806" alt="image" src="https://github.com/user-attachments/assets/a93e00d0-f591-43d5-99aa-f6a373291203" />
+
 **Part 2**
+
+https://github.com/user-attachments/assets/cd82e853-0e6d-4bec-89fb-27424c59b5a3
+
+**Part 3 & 4**
+
+https://github.com/user-attachments/assets/175b7740-9af3-47fa-ba06-f1f8129a68c8
 
 ## The Algorithm
 

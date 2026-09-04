@@ -10,7 +10,7 @@ class VideoStreamer(Node):
         super().__init__('video_streamer_node')
 
         #Initialize video stream
-        self.cap = cv2.VideoCapture('file:///home/gavin/ros2_ws/src/shape_segmenter/shape_segmenter/assets/PennAir 2024 App Dynamic Hard.mp4', cv2.CAP_FFMPEG)
+        self.cap = cv2.VideoCapture('file:///home/gavin/ros2_ws/src/shape_segmenter/shape_segmenter/assets/Task 3&4.mp4', cv2.CAP_FFMPEG)
         if not self.cap.isOpened():
             self.get_logger().error(f'Could not open video file at:')
             return

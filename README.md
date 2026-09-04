@@ -22,7 +22,7 @@ The pipeline is split across two nodes: one streams video frames onto a topic, a
 
 <img width="2838" height="602" alt="image" src="https://github.com/user-attachments/assets/50a4a8fb-e0d5-4d85-bace-bdec7bdd3f24" />
 
-The video stream node reads a video file frame-by-frame using OpenCV and publishes each frame to `/camera/Image_raw`. The video processing node subscribes to that stream, runs the shape-segmentation and centroid algorithm on every frame, then publishes the annotated frame and a text description of each detected object's coordinates.
+The video stream node reads a video file frame-by-frame using OpenCV and publishes each frame to `/camera/Image_raw`. The video processing node subscribes to that stream, runs the shape-segmentation and centroid algorithm on every frame, then publishes the annotated frame to `/camera/Image_processed` and a text description of each detected object's coordinates to `/coords`.
 
 ## Package Structure
 

@@ -9,6 +9,7 @@ The pipeline is split across two nodes: one streams video frames onto a topic, a
 ## Table of Contents
 
 - [Overview](#overview)
+- [Tasks](#tasks)
 - [Package Structure](#package-structure)
 - [The Algorithm](#the-algorithm)
 - [Dependencies](#dependencies)
@@ -39,6 +40,11 @@ shape_segmenter/
 ├── setup.py
 └── setup.cfg
 ```
+
+## Tasks
+**Part 1**
+<img width="1438" height="806" alt="image" src="https://github.com/user-attachments/assets/a93e00d0-f591-43d5-99aa-f6a373291203" />
+**Part 2**
 
 ## The Algorithm
 

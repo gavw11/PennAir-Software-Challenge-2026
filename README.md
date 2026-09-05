@@ -67,10 +67,14 @@ The segmentation logic is processed in `alg.py`. For every  frame:
 
 
 3. **Border padding** — a 4px constant border is added so shapes that touch the edge of the frame are still detected as closed contours.
-<img width="2848" height="1632" alt="image" src="https://github.com/user-attachments/assets/84fe6b77-49c8-4a76-b02d-d0fc55df7734" />
+<img width="2862" height="1634" alt="image" src="https://github.com/user-attachments/assets/b469206e-697a-4e19-8a00-259ce831848b" />
    
 4. **Contour detection & filtering** — `cv2.findContours` finds all closed regions; contours with area outside `[7000, 500000]` px² are discarded (too small = noise, too large = background).
+<img width="2848" height="1632" alt="image" src="https://github.com/user-attachments/assets/84fe6b77-49c8-4a76-b02d-d0fc55df7734" />
+
 5. **Centroid calculation** — for each valid contour, image moments (`cv2.moments`) give the pixel-space centroid `(c_u, c_v)`.
+<img width="2852" height="1638" alt="image" src="https://github.com/user-attachments/assets/fcde64a2-4beb-4b9a-afee-46f2e3426ebd" />
+
 6. **3D coordinate estimation** — pixel coordinates are converted to real-world X/Y/Z using a pinhole camera model:
    - A known reference object (measured circle radius in pixels: `cir_rad_x = 101.5`, `cir_rad_y = 104.5`) combined with the camera's focal lengths (`f_x`, `f_y`, from the provided intrinsic matrix) is used to calculate the depth `Z` via similar triangles.
    - `X` and `Y` are then computed from the pixel centroid, `Z`, and the focal lengths.

@@ -59,7 +59,11 @@ https://github.com/user-attachments/assets/175b7740-9af3-47fa-ba06-f1f8129a68c8
 The segmentation logic is processed in `alg.py`. For every  frame:
 
 1. **Grayscale + Canny edge detection** — the frame is converted to grayscale and run through `cv2.Canny` to extract shape outlines.
+<img width="2842" height="1634" alt="Screenshot 2026-09-05 181454" src="https://github.com/user-attachments/assets/21d7a4a0-b1e2-46db-9274-0ad81fbbc56a" />
+
 2. **Dilation** — the edges are dilated with a 5×5 kernel to close small gaps so outlines form fully enclosed regions.
+<img width="2858" height="1638" alt="Screenshot 2026-09-05 181518" src="https://github.com/user-attachments/assets/7d943dfe-029c-4909-b9a6-1f246cca2ba7" />
+
 3. **Border padding** — a 4px constant border is added so shapes that touch the edge of the frame are still detected as closed contours.
 4. **Contour detection & filtering** — `cv2.findContours` finds all closed regions; contours with area outside `[7000, 500000]` px² are discarded (too small = noise, too large = background).
 5. **Centroid calculation** — for each valid contour, image moments (`cv2.moments`) give the pixel-space centroid `(c_u, c_v)`.

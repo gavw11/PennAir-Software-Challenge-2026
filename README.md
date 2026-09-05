@@ -67,7 +67,7 @@ The segmentation logic is processed in `alg.py`. For every  frame:
 
 
 3. **Border padding** — a 4px constant border is added so shapes that touch the edge of the frame are still detected as closed contours.
-<img width="2862" height="1634" alt="image" src="https://github.com/user-attachments/assets/b469206e-697a-4e19-8a00-259ce831848b" />
+<img width="2866" height="1732" alt="image" src="https://github.com/user-attachments/assets/40c14d5b-62f2-438a-9064-94d2a4004ae1" />
    
 4. **Contour detection & filtering** — `cv2.findContours` finds all closed regions; contours with area outside `[7000, 500000]` px² are discarded (too small = noise, too large = background).
 <img width="2848" height="1632" alt="image" src="https://github.com/user-attachments/assets/84fe6b77-49c8-4a76-b02d-d0fc55df7734" />

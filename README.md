@@ -81,6 +81,10 @@ The segmentation logic is processed in `alg.py`. For every  frame:
 <img width="2360" height="524" alt="IMG_0023" src="https://github.com/user-attachments/assets/9066b886-d740-48a2-bc97-e98b908ce1ca" />
 
 7. **Annotation** — contours, centroid markers, and coordinate text are drawn directly onto the frame, which is then resized to 50% for easier viewing before being published.
+   
+8. **3D Projection** — object contours and centroids are projected into 3D space using matplotlib.
+<img width="1586" height="1154" alt="Screenshot 2026-09-06 190850" src="https://github.com/user-attachments/assets/ccaad581-7238-4ea6-b0ee-45eec82efbbc" />
+
 
 **Design note:** an initial approach considered using a pretrained segmentation model (FastSAM) for faster, more general shape detection, but this was later disallowed. Thus, traditional CV techniques were used.
 

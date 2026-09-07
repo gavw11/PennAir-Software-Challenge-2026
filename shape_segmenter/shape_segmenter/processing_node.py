@@ -2,10 +2,10 @@
 import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Image
-from std_msgs.msg import String
 import cv2
 from cv_bridge import CvBridge
 from shape_segmenter.alg import alg
+from interfaces.msg import Coords
 
 class ImageProcessor(Node):
     def __init__(self):
@@ -26,7 +26,7 @@ class ImageProcessor(Node):
 
         #Create publisher to send coords out
         self.coord_publisher = self.create_publisher(
-            String,
+            Coords,
             'coords',
             10
         )    
@@ -53,8 +53,10 @@ class ImageProcessor(Node):
         i = 0
         for coord in coords:
             #Send coords to topic
-            coord_msg = String()
-            coord_msg.data = f"Object {i}: X: {coord[0]}, Y: {coord[1]}, Z: {coord[2]}"
+            coord_msg = Coords()
+            coord_msg.x = coord[0]
+            coord_msg.y = coord[1]
+            coord_msg.z = coord[2]
             self.coord_publisher.publish(coord_msg)
             i+=1
 

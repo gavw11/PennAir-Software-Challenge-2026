@@ -9,8 +9,11 @@ class VideoStreamer(Node):
     def __init__(self):
         super().__init__('video_streamer_node')
 
+        self.declare_parameter('input_path', '/home/gavin/ros2_ws/src/shape_segmenter/shape_segmenter/assets/Task 3&4.mp4')
+        input_path = self.get_parameter('input_path').value
+
         #Initialize video stream
-        self.cap = cv2.VideoCapture('file:///home/gavin/ros2_ws/src/shape_segmenter/shape_segmenter/assets/Task 3&4.mp4', cv2.CAP_FFMPEG)
+        self.cap = cv2.VideoCapture(input_path, cv2.CAP_FFMPEG)
         if not self.cap.isOpened():
             self.get_logger().error(f'Could not open video file at:')
             return

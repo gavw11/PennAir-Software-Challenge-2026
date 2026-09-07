@@ -83,7 +83,7 @@ def alg(frame):
 
                     #Write coordinates
                     cen_text = f"[Centroid: ({c_x}, {c_y}, {c_z})]"
-                    cv2.putText(frame, cen_text, (int(c_u-20), int(c_v+50)), cv2.FONT_HERSHEY_PLAIN, fontScale=1, color=(255, 255, 255), thickness=1)
+                    cv2.putText(frame, cen_text, (int(c_u-250), int(c_v+50)), cv2.FONT_HERSHEY_PLAIN, fontScale=2, color=(255, 255, 255), thickness=3)
 
         #Resize frame for easier viewing
         frame = cv2.resize(frame, (0,0), fx=0.5, fy=0.5)
